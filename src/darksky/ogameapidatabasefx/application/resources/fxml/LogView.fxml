@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darksky.ogameapidatabasefx.application.gui.LogViewController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="140.0" prefWidth="140.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="140.0" prefWidth="140.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="140.0" prefWidth="140.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="140.0" prefWidth="140.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="140.0" prefWidth="140.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="104.0" minHeight="75.0" prefHeight="104.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="90.0" minHeight="61.0" prefHeight="61.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="525.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <ListView fx:id="logList" prefHeight="550.0" prefWidth="700.0" style="-fx-font: 12px monospace;" GridPane.columnSpan="5" GridPane.rowIndex="2" />
+      <VBox prefHeight="68.0" prefWidth="150.0">
+         <children>
+            <RadioButton fx:id="inactivesChooser" mnemonicParsing="false" selected="true" text="%newinactives">
+               <toggleGroup>
+                  <ToggleGroup fx:id="logToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="statusChangeChooser" mnemonicParsing="false" text="%statuschanges" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="memberChangesChooser" mnemonicParsing="false" text="%alliancechanges" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="relocationsChooser" mnemonicParsing="false" text="%relocations" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="pilloryChooser" mnemonicParsing="false" text="%pillory" toggleGroup="$logToggleGroup" />
+         </children>
+      </VBox>
+      <VBox GridPane.columnIndex="4">
+         <children>
+            <RadioButton fx:id="allianceTagChangesChooser" mnemonicParsing="false" text="%tags" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="allianceHomepageChangesChooser" mnemonicParsing="false" text="%homepages" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="allianceLogoChangesChooser" mnemonicParsing="false" text="%logos" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="allianceApplicationChangesChooser" mnemonicParsing="false" text="%applications" toggleGroup="$logToggleGroup" />
+         </children>
+      </VBox>
+      <VBox prefWidth="150.0" GridPane.columnIndex="3">
+         <children>
+            <RadioButton fx:id="deletedPlayersChooser" mnemonicParsing="false" text="%deletedplayers" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="deletedAlliancesChooser" mnemonicParsing="false" text="%deletedalliances" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="deletedPlanetsChooser" mnemonicParsing="false" text="%deletedplanets" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="deletedMoonsChooser" mnemonicParsing="false" text="%deletedmoons" toggleGroup="$logToggleGroup" />
+         </children>
+      </VBox>
+      <VBox prefWidth="150.0" GridPane.columnIndex="2">
+         <children>
+            <RadioButton fx:id="newPlayersChooser" mnemonicParsing="false" text="%newplayers" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="newAlliancesChooser" mnemonicParsing="false" text="%newalliances" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="newPlanetsChooser" mnemonicParsing="false" text="%newplanets" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="newMoonsChooser" mnemonicParsing="false" text="%newmoons" toggleGroup="$logToggleGroup" />
+         </children>
+      </VBox>
+      <VBox prefWidth="150.0" GridPane.columnIndex="1">
+         <children>
+            <RadioButton fx:id="playerNameChooser" mnemonicParsing="false" text="%playernames" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="allianceNameChooser" mnemonicParsing="false" text="%alliancenames" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="planetNameChooser" mnemonicParsing="false" text="%planetnames" toggleGroup="$logToggleGroup" />
+            <RadioButton fx:id="moonNameChooser" mnemonicParsing="false" text="%moonnames" toggleGroup="$logToggleGroup" />
+         </children>
+      </VBox>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <DatePicker fx:id="fromDateInput" editable="false" layoutX="15.0" layoutY="30.0" prefHeight="25.0" prefWidth="125.0" />
+            <Label layoutX="40.0" layoutY="10.0" text="%from">
+               <opaqueInsets>
+                  <Insets left="50.0" right="50.0" />
+               </opaqueInsets>
+            </Label>
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <DatePicker fx:id="toDateInput" editable="false" layoutX="15.0" layoutY="30.0" prefHeight="25.0" prefWidth="125.0" />
+            <Label layoutX="40.0" layoutY="10.0" text="%to" />
+         </children>
+      </Pane>
+      <Pane GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <children>
+            <StackPane layoutX="4.0" layoutY="30.0">
+               <children>
+                  <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitButtonAction" prefHeight="25.0" prefWidth="150.0" text="%button_search">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <ProgressBar fx:id="logProgressBar" prefWidth="150.0" progress="0.0" visible="false" />
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

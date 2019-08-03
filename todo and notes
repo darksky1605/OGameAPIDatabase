@@ -1,0 +1,10 @@
+TODO: Display highscore history (currently highscore history is created but not shown anywhere)
+
+Notes:
+
+* How to add new server settings (this breaks existing data without manually changing existing databases):
+        DatabaseUpdater.java: Add settings to SERVERDATA_COLUMNNAMES
+        DatabaseCreator.java: Add settings to creation statement of database table serverData
+        ServerData.java: Add settings to dataMap and constructor arguments, add getters
+        EntityReader.java: Add settings to getServerDataQry
+        ResultSetHelper.java: In getServerDataFromResultSet, add setttings to ServerData constructor

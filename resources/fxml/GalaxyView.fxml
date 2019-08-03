@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<GridPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darksky.ogameapidatabasefx.application.gui.GalaxyViewController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="175.0" prefWidth="175.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="175.0" prefWidth="175.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="175.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="175.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="386.0" minHeight="386.0" prefHeight="386.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="695.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="120.0" prefWidth="175.0" GridPane.columnIndex="1">
+         <children>
+            <Button fx:id="submitButton" layoutX="68.0" layoutY="90.0" mnemonicParsing="false" onAction="#submitButtonAction" text="%button_show" />
+            <DatePicker fx:id="galaxyDatePicker" disable="true" editable="false" layoutX="14.0" layoutY="30.0" />
+         </children>
+      </Pane>
+      <StackPane prefHeight="386.0" prefWidth="800.0" GridPane.columnSpan="4" GridPane.rowIndex="1">
+         <children>
+            <TableView fx:id="galaxyTable" prefHeight="386.0" prefWidth="800.0">
+              <columns>
+                <TableColumn fx:id="positionColumn" editable="false" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" sortable="false" />
+                <TableColumn fx:id="planetColumn" editable="false" prefWidth="95.0" sortable="false" text="%planet" />
+                  <TableColumn fx:id="moonColumn" editable="false" minWidth="8.0" prefWidth="111.0" sortable="false" text="%moon" />
+                  <TableColumn fx:id="playerColumn" editable="false" prefWidth="145.0" sortable="false" text="%player" />
+                  <TableColumn fx:id="statusColumn" editable="false" prefWidth="75.0" sortable="false" text="%status" />
+                  <TableColumn fx:id="allianceColumn" editable="false" prefWidth="84.0" sortable="false" text="%alliance" />
+              </columns>
+            </TableView>
+            <ProgressBar fx:id="galaxyProgressBar" prefHeight="100.0" prefWidth="800.0" progress="0.0" visible="false" />
+         </children>
+      </StackPane>
+      <Pane prefHeight="120.0" prefWidth="175.0">
+         <children>
+            <TextField fx:id="galaxyInput" layoutX="50.0" layoutY="30.0" onAction="#submitButtonAction" prefHeight="25.0" prefWidth="70.0" text="1" />
+            <Button fx:id="previousGalaxyButton" layoutX="10.0" layoutY="30.0" maxWidth="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#previousGalaxyButtonAction" prefWidth="25.0" text="&lt;" />
+            <Label fx:id="galaxyLabel" layoutX="60.0" layoutY="10.0" text="%galaxy" />
+            <Button fx:id="nextGalaxyButton" layoutX="135.0" layoutY="30.0" maxWidth="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#nextGalaxyButtonAction" prefWidth="25.0" text="&gt;" />
+            <Label fx:id="systemLabel" layoutX="60.0" layoutY="70.0" text="%system" />
+            <TextField fx:id="systemInput" layoutX="50.0" layoutY="90.0" onAction="#submitButtonAction" prefHeight="25.0" prefWidth="70.0" text="1" />
+            <Button fx:id="previousSystemButton" layoutX="10.0" layoutY="90.0" maxWidth="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#previousSystemButtonAction" prefWidth="25.0" text="&lt;" />
+            <Button fx:id="nextSystemButton" layoutX="135.0" layoutY="90.0" maxWidth="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#nextSystemButtonAction" prefWidth="25.0" text="&gt;" />
+         </children>
+      </Pane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="mainGridPane" hgap="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darksky.ogameapidatabasefx.application.gui.MainWindowController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="800.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="700.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane prefHeight="700.0" prefWidth="200.0" vgap="5.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="400.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="overviewButton" mnemonicParsing="false" onAction="#navigateButtonAction" prefHeight="30.0" prefWidth="200.0" text="%button_serverdetails" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#navigateButtonAction" prefHeight="30.0" prefWidth="200.0" text="%button_search" GridPane.rowIndex="1" />
+            <Button fx:id="detailsButton" mnemonicParsing="false" onAction="#navigateButtonAction" prefHeight="30.0" prefWidth="200.0" text="%button_playerdetails" GridPane.rowIndex="2" />
+            <Button fx:id="logButton" mnemonicParsing="false" onAction="#navigateButtonAction" prefHeight="30.0" prefWidth="200.0" text="%button_logs" GridPane.rowIndex="3" />
+            <Button fx:id="highscoreButton" mnemonicParsing="false" onAction="#navigateButtonAction" prefHeight="30.0" prefWidth="200.0" text="%button_highscore" GridPane.rowIndex="4" />
+            <Button fx:id="galaxyButton" mnemonicParsing="false" onAction="#navigateButtonAction" prefHeight="30.0" prefWidth="200.0" text="%button_galaxy" GridPane.rowIndex="5" />
+            <Button fx:id="sqlButton" mnemonicParsing="false" onAction="#navigateButtonAction" prefHeight="30.0" prefWidth="200.0" text="SQL" GridPane.rowIndex="6" />
+            <Button fx:id="statisticsButton" mnemonicParsing="false" onAction="#navigateButtonAction" prefHeight="30.0" prefWidth="200.0" text="%button_statistics" GridPane.rowIndex="7" />
+            <Button fx:id="settingsButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="" GridPane.rowIndex="8" />
+            <Button fx:id="dataManagementButton" mnemonicParsing="false" onAction="#navigateButtonAction" prefHeight="30.0" prefWidth="200.0" text="%button_databasemanagement" GridPane.rowIndex="9" />
+            <ListView fx:id="existingDatabasesListView" prefHeight="324.0" prefWidth="200.0" GridPane.rowIndex="10" />
+         </children>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

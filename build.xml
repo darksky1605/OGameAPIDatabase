@@ -1,0 +1,39 @@
+<project name="OGameAPIDatabase" default="dist" basedir=".">
+	<property name="src" location="src"/>
+    <property name="build" location="build"/>
+    <property name="res" location="resources"/>
+    <property name="libs" location="libs"/>
+    <property name="dist" location="dist"/>
+
+	<target name="clean">
+        <delete dir="${build}"/>
+        <mkdir dir="${build}"/>
+	</target>
+
+	<target name="compile" depends="clean">	
+        <javac srcdir="${src}" destdir="${build}">
+            <classpath>
+                <pathelement path="${libs}/ini4j-0.5.4.jar"/>
+                <pathelement path="${libs}/sqlite-jdbc-3.8.11.1.jar"/>
+            </classpath>
+        </javac>
+	</target>
+
+	<target name="dist" depends="compile">
+        <jar destfile="${dist}/OGameAPIDatabaseDarkSky.jar" basedir="${build}">
+			
+            <fileset dir="${libs}" includes="*"/>
+            <zipfileset dir="${res}" includes="**/**" prefix="darksky/ogameapidatabasefx/application/resources"/>
+            <zipfileset src="jar-in-jar-loader.zip" />
+            
+			<manifest>
+              <attribute name="Rsrc-Class-Path" value="./ ini4j-0.5.4.jar sqlite-jdbc-3.8.11.1.jar" />
+		  	  <attribute name="Rsrc-Main-Class" value="darksky.ogameapidatabasefx.application.main.Main"/>
+              <attribute name="Class-Path" value="."/>
+              <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+			</manifest>
+	   	</jar>
+	</target>
+
+	
+</project>

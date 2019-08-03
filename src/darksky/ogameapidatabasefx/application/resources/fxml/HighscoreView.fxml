@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darksky.ogameapidatabasefx.application.gui.HighscoreViewController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="538.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="67.0" prefWidth="600.0">
+         <children>
+            <HBox layoutX="95.0" layoutY="14.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="playerRadioButton" mnemonicParsing="false" selected="true" text="%players">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="allianceRadioButton" mnemonicParsing="false" text="%alliances" toggleGroup="$group" />
+                  <Label fx:id="sortLabel" prefHeight="17.0" text="%sortby" textAlignment="JUSTIFY" />
+                  <ComboBox fx:id="sortCombobox" />
+               </children>
+            </HBox>
+            <HBox layoutX="95.0" layoutY="40.0" spacing="10.0">
+               <children>
+                  <Label fx:id="pageLabel" text="%page" />
+                  <Button fx:id="prevPageButton" mnemonicParsing="false" onAction="#prevPageButtonAction" text="&lt;" />
+                  <TextField fx:id="pageTextField" onAction="#submitButtonAction" prefHeight="25.0" prefWidth="56.0" text="1" />
+                  <Button fx:id="nextPageButton" mnemonicParsing="false" onAction="#nextPageButtonAction" text="&gt;" />
+                  <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitButtonAction" text="%button_show" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <TableView fx:id="highscoreTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="rankColumn" editable="false" maxWidth="50.0" minWidth="50.0" prefWidth="-1.0" sortable="false" text="%rank" />
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="75.0" sortable="false" text="%name" />
+            <TableColumn fx:id="totalColumn" editable="false" prefWidth="75.0" sortable="false" text="%total" />
+            <TableColumn fx:id="economyColumn" editable="false" prefWidth="75.0" sortable="false" text="%economy" />
+            <TableColumn fx:id="researchColumn" editable="false" prefWidth="75.0" sortable="false" text="%research" />
+            <TableColumn fx:id="militaryColumn" editable="false" prefWidth="75.0" sortable="false" text="%military" />
+            <TableColumn fx:id="militaryBuiltColumn" editable="false" prefWidth="75.0" sortable="false" text="%militarybuilt" />
+            <TableColumn fx:id="militaryDestroyedColumn" editable="false" prefWidth="75.0" sortable="false" text="%militarydestroyed" />
+            <TableColumn fx:id="militaryLostColumn" editable="false" prefWidth="75.0" sortable="false" text="%militarylost" />
+            <TableColumn fx:id="honorColumn" editable="false" prefWidth="75.0" sortable="false" text="%honor" />
+            <TableColumn fx:id="shipsColumn" editable="false" prefWidth="75.0" sortable="false" text="%ships" />
+        </columns>
+      </TableView>
+   </children>
+</GridPane>

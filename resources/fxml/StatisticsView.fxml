@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<GridPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darksky.ogameapidatabasefx.application.gui.StatisticsController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <LineChart fx:id="lineChart" animated="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="500.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <GridPane prefHeight="700.0" GridPane.columnIndex="1">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="168.0" minHeight="30.0" prefHeight="100.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="421.0" minHeight="30.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="472.0" minHeight="30.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="472.0" minHeight="30.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="550.0" minHeight="30.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="421.0" minHeight="30.0" prefHeight="100.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="530.0" minHeight="30.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <DatePicker fx:id="fromDatePicker" prefHeight="25.0" prefWidth="134.0">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </DatePicker>
+            <DatePicker fx:id="toDatePicker" prefHeight="25.0" prefWidth="123.0" GridPane.columnIndex="1">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </DatePicker>
+            <GridPane GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="showHistoryButton" mnemonicParsing="false" onAction="#showHistoryButtonAction" prefHeight="25.0" prefWidth="249.0" text="%button_showhistory" />
+                  <Button fx:id="showPMDistributionButton" mnemonicParsing="false" onAction="#showPMDistributionWindow" prefHeight="25.0" prefWidth="225.0" text="%button_showplanetdistribution" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <ListView fx:id="existingServersList" maxHeight="200.0" maxWidth="200.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5" GridPane.rowSpan="2" />
+            <GridPane GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <StackPane GridPane.rowIndex="1">
+                     <children>
+                        <Button fx:id="savePMDistributionImagesButton" mnemonicParsing="false" onAction="#savePMDistributionImages" prefHeight="30.0" prefWidth="300.0" text="%button_saveplanetdistributions" />
+                        <ProgressBar fx:id="savePMDistributionImagesProgressBar" prefHeight="10.0" prefWidth="300.0" progress="0.0" visible="false" />
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <Button fx:id="saveStatisticsReportsButton" mnemonicParsing="false" onAction="#saveStatisticsReportsAction" prefHeight="30.0" prefWidth="300.0" text="%button_savereports" />
+                        <ProgressBar fx:id="saveStatisticsReportsProgressBar" prefHeight="10.0" prefWidth="300.0" progress="0.0" visible="false" />
+                     </children>
+                  </StackPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

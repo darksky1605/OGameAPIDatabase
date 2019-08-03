@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darksky.ogameapidatabasefx.application.gui.SettingsViewController">
+   <center>
+      <Pane prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="resetSettingsButton" layoutX="62.0" layoutY="405.0" mnemonicParsing="false" onAction="#resetSettings" prefHeight="25.0" prefWidth="359.0" text="%button_resetsettings" />
+            <TableView fx:id="settingsTable" editable="true" layoutX="62.0" layoutY="47.0" prefHeight="348.0" prefWidth="360.0">
+              <columns>
+                <TableColumn fx:id="optionColumn" editable="false" prefWidth="174.0" sortable="false" text="Option" />
+                <TableColumn fx:id="valueColumn" onEditCommit="#editCommit" prefWidth="185.0" sortable="false" text="Wert" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

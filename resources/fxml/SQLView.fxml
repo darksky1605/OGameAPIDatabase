@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<GridPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darksky.ogameapidatabasefx.application.gui.SQLViewController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <SplitPane fx:id="splitPane" dividerPositions="0.20066889632107024" orientation="VERTICAL" prefHeight="580.0" prefWidth="610.0">
+        <items>
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="102.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextArea fx:id="queryInputArea" minHeight="30.0" prefHeight="500.0" prefWidth="565.0" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="includeEveryExistingDatabaseCheckbox" mnemonicParsing="false" text="%ineverydatabase">
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </CheckBox>
+                  <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitButtonAction" text="%button_go" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            <TableView fx:id="dataTable" minWidth="300.0" prefHeight="500.0" prefWidth="800.0" />
+        </items>
+      </SplitPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>
